@@ -1,1 +1,5 @@
+lab5: main.cpp coordinates.cpp test.cpp coordinates.h
+	g++ -Wall -Werror -std=c++11 main.cpp coordinates.cpp test.cpp -o lab5
 
+test: lab5
+		./lab5
