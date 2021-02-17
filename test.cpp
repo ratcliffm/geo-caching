@@ -1,7 +1,5 @@
 #include "gtest/gtest.h"
 #include "coordinates.h"
-#include "main.cpp"
-#include "coordinates.cpp"
 #include <cmath>
 #include <string>
 
