@@ -1,4 +1,6 @@
 #include <iostream> 
+#include <cstdlib>
+#include <iomanip>
 #include "coordinates.h"
 #include <vector> 
 
@@ -21,5 +23,5 @@ while (getline(cin, coords)){
 Coordinate minCoord = SortByDistanceTo(x);
 // Print out the coordinate that is closest to the SOU Computer Science building setprecision to 6).
 
-cout << "The the coordinate pair closest to the SOU Computer Science Building is: " << minCoord.first << minCoord.second << endl; 
+cout << "The the coordinate pair closest to the SOU Computer Science Building is: " << fixed << setprecision(6) << minCoord.first << fixed << setprecision(6) << minCoord.second << endl; 
 }
