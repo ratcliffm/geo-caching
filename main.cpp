@@ -6,15 +6,20 @@
 
 using namespace std;
 
-void main() {
+int main() {
     // loop that reads comma-delimited lines from standard input one line at a time and constructs a vector of coordinates 
 string coords;
 CoordVec x; 
-// Using unix pipe to get coords for input 
+Coordinate userInput;
+// Using unix pipe to get coords for input  
 while (getline(cin, coords)){
-        Coordinate userInput;
-        userInput.first = coords.at(0); 
-        userInput.second = coords.at(1); 
+        // get whole line
+        int commaLocation = coords.find(",");
+        string lat = coords.substr(0, commaLocation -1); 
+        string longitude = coords.substr(commaLocation + 1, -1);
+        // push variable into a vector 
+        userInput.first = atof(lat.c_str());
+        userInput.second = atof(longitude.c_str()); 
             x.push_back(userInput); 
         
 }
@@ -22,6 +27,6 @@ while (getline(cin, coords)){
 // Sort vector of coordinates using SortByDistanceTo function
 Coordinate minCoord = SortByDistanceTo(x);
 // Print out the coordinate that is closest to the SOU Computer Science building setprecision to 6).
-
-cout << "The the coordinate pair closest to the SOU Computer Science Building is: " << fixed << setprecision(6) << minCoord.first << fixed << setprecision(6) << minCoord.second << endl; 
+cout << "The the coordinate pair closest to the SOU Computer Science Building is: " << fixed << setprecision(6) << minCoord.first << ", " << fixed << setprecision(6) << minCoord.second << endl;
+return 0; 
 }
