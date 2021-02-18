@@ -16,7 +16,7 @@ while (getline(cin, coords)){
         // get whole line
         int commaLocation = coords.find(",");
         string lat = coords.substr(0, commaLocation -1); 
-        string longitude = coords.substr(commaLocation + 1, -1);
+        string longitude = coords.substr(commaLocation + 1, coords.back());
         // push variable into a vector 
         userInput.first = atof(lat.c_str());
         userInput.second = atof(longitude.c_str()); 
