@@ -1,7 +1,10 @@
 #include "coordinates.h"
 #include <cmath> 
+#include <iostream>
 #include <vector> 
 #include <utility> 
+
+using namespace std;
 
 double Haversine(Coordinate a, Coordinate b) 
     {   double rad = 6371; 
@@ -31,7 +34,7 @@ Coordinate SortByDistanceTo(CoordVec v1) {
             // for number in position i of vector get haversine dist 
             double idistance = Haversine(v1[i], csBuilding);
             double jdistance = Haversine(v1[j], csBuilding); 
-        if (jdistance  < idistance) {
+        if (jdistance < idistance) {
             swap(v1[i], v1[j]);
         }
     }
@@ -41,4 +44,4 @@ Coordinate SortByDistanceTo(CoordVec v1) {
     Coordinate coordMin = v1[0]; // vector of coords at index 0 
     return coordMin; 
 
-} 
+}
